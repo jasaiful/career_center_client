@@ -9,7 +9,7 @@ const ErrorPage = () => {
             <div className="w-full md:w-1/2">
                 <img className="" src="https://i.ibb.co/X2xhYkH/image.png" alt="" />
             </div>
-            <div className="w-1/2 mt-36 space-y-8 md:text-right">
+            <div className="w-1/2 mt-36 space-y-8 text-center">
                 <h3 className="text-4xl font-semibold">Oops!!!</h3>
                 <p className="text-2xl font-semibold text-pink-600">Sorry, an unexpected error has occurred.</p>
                 <p className="text-xl">

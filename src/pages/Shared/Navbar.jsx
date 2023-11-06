@@ -9,6 +9,7 @@ const Navbar = () => {
         <li><Link to='/myPostedJobs'>My Posted Jobs</Link></li>
         <li><Link to='/myBids'>My Bids</Link></li>
         <li><Link to='/bidRequests'>Bid Requests</Link></li>
+        <li><Link to='/register'>Register</Link></li>
     </>
     return (
         <div>

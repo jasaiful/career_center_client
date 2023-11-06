@@ -5,10 +5,10 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaYoutube } from "react-icons/fa";
 const Footer = () => {
     return (
 
-        <footer className="footer footer-center p-10 bg-base-200">
+        <footer className="footer mt-5 footer-center p-10 bg-base-200">
             <aside>
-            <Link to='/'><img className="rounded-xl" src={logo} alt="" /></Link>
-            <header className="text-4xl font-bold"><span className="text-pink-600">Career</span> Center</header>
+                <Link to='/'><img className="rounded-xl" src={logo} alt="" /></Link>
+                <header className="text-4xl font-bold"><span className="text-pink-600">Career</span> Center</header>
                 <p className="italic">Providing reliable job placement services since 2019</p>
                 <p>
                     House: 48, Road: 11/A, Dhanmondi, Dhaka-1209
@@ -26,7 +26,7 @@ const Footer = () => {
             </nav>
         </footer>
 
-        
+
     );
 };
 
