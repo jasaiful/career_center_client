@@ -1,332 +1,332 @@
 [
     {
         "email": "webdev@example.com",
-        "job-title": "Front-End Developer",
+        "jobTitle": "Front-End Developer",
         "deadline": "2023-12-15",
         "description": "Create visually appealing and user-friendly websites.",
         "category": "Web Development",
-        "minimum-price": 40000,
-        "maximum-price": 60000,
+        "minPrice": 40000,
+        "maxPrice": 60000,
         "status": "Open",
-        "buyer-email": "company1@example.com"
+        "buyerEmail": "company1@example.com"
     },
     {
         "email": "webdev@example.com",
-        "job-title": "Back-End Developer",
+        "jobTitle": "Back-End Developer",
         "deadline": "2023-12-20",
         "description": "Build robust server-side applications and databases.",
         "category": "Web Development",
-        "minimum-price": 45000,
-        "maximum-price": 65000,
+        "minPrice": 45000,
+        "maxPrice": 65000,
         "status": "Open",
-        "buyer-email": "company2@example.com"
+        "buyerEmail": "company2@example.com"
     },
     {
         "email": "webdev@example.com",
-        "job-title": "Full-Stack Developer",
+        "jobTitle": "Full-Stack Developer",
         "deadline": "2023-12-18",
         "description": "Combine front-end and back-end development skills.",
         "category": "Web Development",
-        "minimum-price": 50000,
-        "maximum-price": 75000,
+        "minPrice": 50000,
+        "maxPrice": 75000,
         "status": "Open",
-        "buyer-email": "company3@example.com"
+        "buyerEmail": "company3@example.com"
     },
     {
         "email": "webdev@example.com",
-        "job-title": "UI/UX Designer",
+        "jobTitle": "UI/UX Designer",
         "deadline": "2023-12-16",
         "description": "Design intuitive user interfaces for websites and apps.",
         "category": "Web Development",
-        "minimum-price": 35000,
-        "maximum-price": 55000,
+        "minPrice": 35000,
+        "maxPrice": 55000,
         "status": "Open",
-        "buyer-email": "company4@example.com"
+        "buyerEmail": "company4@example.com"
     },
     {
         "email": "webdev@example.com",
-        "job-title": "E-commerce Developer",
+        "jobTitle": "E-commerce Developer",
         "deadline": "2023-12-22",
         "description": "Develop online shopping platforms and payment gateways.",
         "category": "Web Development",
-        "minimum-price": 55000,
-        "maximum-price": 80000,
+        "minPrice": 55000,
+        "maxPrice": 80000,
         "status": "Open",
-        "buyer-email": "company5@example.com"
+        "buyerEmail": "company5@example.com"
     },
     {
         "email": "webdev@example.com",
-        "job-title": "Web Content Manager",
+        "jobTitle": "Web Content Manager",
         "deadline": "2023-12-21",
         "description": "Manage and update website content and multimedia.",
         "category": "Web Development",
-        "minimum-price": 30000,
-        "maximum-price": 45000,
+        "minPrice": 30000,
+        "maxPrice": 45000,
         "status": "Open",
-        "buyer-email": "company6@example.com"
+        "buyerEmail": "company6@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Social Media Manager",
+        "jobTitle": "Social Media Manager",
         "deadline": "2023-12-15",
         "description": "Create and manage social media marketing campaigns.",
         "category": "Digital Marketing",
-        "minimum-price": 35000,
-        "maximum-price": 55000,
+        "minPrice": 35000,
+        "maxPrice": 55000,
         "status": "Open",
-        "buyer-email": "company1@example.com"
+        "buyerEmail": "company1@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Search Engine Optimizer (SEO)",
+        "jobTitle": "Search Engine Optimizer (SEO)",
         "deadline": "2023-12-20",
         "description": "Optimize website content for search engines.",
         "category": "Digital Marketing",
-        "minimum-price": 40000,
-        "maximum-price": 60000,
+        "minPrice": 40000,
+        "maxPrice": 60000,
         "status": "Open",
-        "buyer-email": "company2@example.com"
+        "buyerEmail": "company2@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Content Marketing Specialist",
+        "jobTitle": "Content Marketing Specialist",
         "deadline": "2023-12-18",
         "description": "Create and distribute valuable content to attract customers.",
         "category": "Digital Marketing",
-        "minimum-price": 38000,
-        "maximum-price": 58000,
+        "minPrice": 38000,
+        "maxPrice": 58000,
         "status": "Open",
-        "buyer-email": "company3@example.com"
+        "buyerEmail": "company3@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Email Marketing Coordinator",
+        "jobTitle": "Email Marketing Coordinator",
         "deadline": "2023-12-16",
         "description": "Manage email marketing campaigns and newsletters.",
         "category": "Digital Marketing",
-        "minimum-price": 32000,
-        "maximum-price": 50000,
+        "minPrice": 32000,
+        "maxPrice": 50000,
         "status": "Open",
-        "buyer-email": "company4@example.com"
+        "buyerEmail": "company4@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Pay-Per-Click (PPC) Specialist",
+        "jobTitle": "Pay-Per-Click (PPC) Specialist",
         "deadline": "2023-12-22",
         "description": "Manage paid advertising campaigns on search engines and social media.",
         "category": "Digital Marketing",
-        "minimum-price": 40000,
-        "maximum-price": 60000,
+        "minPrice": 40000,
+        "maxPrice": 60000,
         "status": "Open",
-        "buyer-email": "company5@example.com"
+        "buyerEmail": "company5@example.com"
     },
     {
         "email": "digitalmarketing@example.com",
-        "job-title": "Digital Marketing Analyst",
+        "jobTitle": "Digital Marketing Analyst",
         "deadline": "2023-12-21",
         "description": "Analyze marketing data and provide insights for optimization.",
         "category": "Digital Marketing",
-        "minimum-price": 38000,
-        "maximum-price": 58000,
+        "minPrice": 38000,
+        "maxPrice": 58000,
         "status": "Open",
-        "buyer-email": "company6@example.com"
+        "buyerEmail": "company6@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "Graphic Designer",
+        "jobTitle": "Graphic Designer",
         "deadline": "2023-12-15",
         "description": "Create visually appealing graphics for various media.",
         "category": "Graphics Design",
-        "minimum-price": 35000,
-        "maximum-price": 55000,
+        "minPrice": 35000,
+        "maxPrice": 55000,
         "status": "Open",
-        "buyer-email": "company1@example.com"
+        "buyerEmail": "company1@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "UI/UX Designer",
+        "jobTitle": "UI/UX Designer",
         "deadline": "2023-12-20",
         "description": "Design user interfaces and experiences for websites and apps.",
         "category": "Graphics Design",
-        "minimum-price": 40000,
-        "maximum-price": 60000,
+        "minPrice": 40000,
+        "maxPrice": 60000,
         "status": "Open",
-        "buyer-email": "company2@example.com"
+        "buyerEmail": "company2@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "Logo Designer",
+        "jobTitle": "Logo Designer",
         "deadline": "2023-12-18",
         "description": "Create unique and memorable logos for businesses.",
         "category": "Graphics Design",
-        "minimum-price": 38000,
-        "maximum-price": 58000,
+        "minPrice": 38000,
+        "maxPrice": 58000,
         "status": "Open",
-        "buyer-email": "company3@example.com"
+        "buyerEmail": "company3@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "Illustrator",
+        "jobTitle": "Illustrator",
         "deadline": "2023-12-16",
         "description": "Create custom illustrations for books, magazines, and more.",
         "category": "Graphics Design",
-        "minimum-price": 32000,
-        "maximum-price": 50000,
+        "minPrice": 32000,
+        "maxPrice": 50000,
         "status": "Open",
-        "buyer-email": "company4@example.com"
+        "buyerEmail": "company4@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "Motion Graphics Designer",
+        "jobTitle": "Motion Graphics Designer",
         "deadline": "2023-12-22",
         "description": "Design animated graphics for videos and marketing campaigns.",
         "category": "Graphics Design",
-        "minimum-price": 40000,
-        "maximum-price": 60000,
+        "minPrice": 40000,
+        "maxPrice": 60000,
         "status": "Open",
-        "buyer-email": "company5@example.com"
+        "buyerEmail": "company5@example.com"
     },
     {
         "email": "graphicsdesign@example.com",
-        "job-title": "Packaging Designer",
+        "jobTitle": "Packaging Designer",
         "deadline": "2023-12-21",
         "description": "Create attractive packaging designs for products.",
         "category": "Graphics Design",
-        "minimum-price": 35000,
-        "maximum-price": 55000,
+        "minPrice": 35000,
+        "maxPrice": 55000,
         "status": "Open",
-        "buyer-email": "company6@example.com"
+        "buyerEmail": "company6@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "Business Systems Analyst",
+        "jobTitle": "Business Systems Analyst",
         "deadline": "2023-12-15",
         "description": "Analyze business processes and recommend IT solutions.",
         "category": "Systems Analyst",
-        "minimum-price": 50000,
-        "maximum-price": 75000,
+        "minPrice": 50000,
+        "maxPrice": 75000,
         "status": "Open",
-        "buyer-email": "company1@example.com"
+        "buyerEmail": "company1@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "Data Systems Analyst",
+        "jobTitle": "Data Systems Analyst",
         "deadline": "2023-12-20",
         "description": "Collect and interpret data for decision-making.",
         "category": "Systems Analyst",
-        "minimum-price": 45000,
-        "maximum-price": 65000,
+        "minPrice": 45000,
+        "maxPrice": 65000,
         "status": "Open",
-        "buyer-email": "company2@example.com"
+        "buyerEmail": "company2@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "Healthcare Systems Analyst",
+        "jobTitle": "Healthcare Systems Analyst",
         "deadline": "2023-12-18",
         "description": "Analyze and optimize healthcare IT systems.",
         "category": "Systems Analyst",
-        "minimum-price": 55000,
-        "maximum-price": 80000,
+        "minPrice": 55000,
+        "maxPrice": 80000,
         "status": "Open",
-        "buyer-email": "company3@example.com"
+        "buyerEmail": "company3@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "Security Systems Analyst",
+        "jobTitle": "Security Systems Analyst",
         "deadline": "2023-12-16",
         "description": "Assess and enhance IT security measures.",
         "category": "Systems Analyst",
-        "minimum-price": 60000,
-        "maximum-price": 90000,
+        "minPrice": 60000,
+        "maxPrice": 90000,
         "status": "Open",
-        "buyer-email": "company4@example.com"
+        "buyerEmail": "company4@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "Financial Systems Analyst",
+        "jobTitle": "Financial Systems Analyst",
         "deadline": "2023-12-22",
         "description": "Analyze financial data and systems for financial institutions.",
         "category": "Systems Analyst",
-        "minimum-price": 55000,
-        "maximum-price": 80000,
+        "minPrice": 55000,
+        "maxPrice": 80000,
         "status": "Open",
-        "buyer-email": "company5@example.com"
+        "buyerEmail": "company5@example.com"
     },
     {
         "email": "systemsanalyst@example.com",
-        "job-title": "ERP Systems Analyst",
+        "jobTitle": "ERP Systems Analyst",
         "deadline": "2023-12-21",
         "description": "Implement and maintain Enterprise Resource Planning (ERP) systems.",
         "category": "Systems Analyst",
-        "minimum-price": 60000,
-        "maximum-price": 90000,
+        "minPrice": 60000,
+        "maxPrice": 90000,
         "status": "Open",
-        "buyer-email": "company6@example.com"
+        "buyerEmail": "company6@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Network Administrator",
+        "jobTitle": "Network Administrator",
         "deadline": "2023-12-15",
         "description": "Manage and maintain computer networks.",
         "category": "Network Engineer",
-        "minimum-price": 45000,
-        "maximum-price": 65000,
+        "minPrice": 45000,
+        "maxPrice": 65000,
         "status": "Open",
-        "buyer-email": "company1@example.com"
+        "buyerEmail": "company1@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Network Security Engineer",
+        "jobTitle": "Network Security Engineer",
         "deadline": "2023-12-20",
         "description": "Implement and monitor network security measures.",
         "category": "Network Engineer",
-        "minimum-price": 55000,
-        "maximum-price": 80000,
+        "minPrice": 55000,
+        "maxPrice": 80000,
         "status": "Open",
-        "buyer-email": "company2@example.com"
+        "buyerEmail": "company2@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Wireless Network Engineer",
+        "jobTitle": "Wireless Network Engineer",
         "deadline": "2023-12-18",
         "description": "Design and maintain wireless networks.",
         "category": "Network Engineer",
-        "minimum-price": 50000,
-        "maximum-price": 75000,
+        "minPrice": 50000,
+        "maxPrice": 75000,
         "status": "Open",
-        "buyer-email": "company3@example.com"
+        "buyerEmail": "company3@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Network Consultant",
+        "jobTitle": "Network Consultant",
         "deadline": "2023-12-16",
         "description": "Provide network infrastructure consulting services.",
         "category": "Network Engineer",
-        "minimum-price": 60000,
-        "maximum-price": 90000,
+        "minPrice": 60000,
+        "maxPrice": 90000,
         "status": "Open",
-        "buyer-email": "company4@example.com"
+        "buyerEmail": "company4@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Telecommunications Engineer",
+        "jobTitle": "Telecommunications Engineer",
         "deadline": "2023-12-22",
         "description": "Design and maintain telecommunications systems.",
         "category": "Network Engineer",
-        "minimum-price": 50000,
-        "maximum-price": 75000,
+        "minPrice": 50000,
+        "maxPrice": 75000,
         "status": "Open",
-        "buyer-email": "company5@example.com"
+        "buyerEmail": "company5@example.com"
     },
     {
         "email": "networkengineer@example.com",
-        "job-title": "Network Support Engineer",
+        "jobTitle": "Network Support Engineer",
         "deadline": "2023-12-21",
         "description": "Provide technical support for network-related issues.",
         "category": "Network Engineer",
-        "minimum-price": 45000,
-        "maximum-price": 65000,
+        "minPrice": 45000,
+        "maxPrice": 65000,
         "status": "Open",
-        "buyer-email": "company6@example.com"
+        "buyerEmail": "company6@example.com"
     }
 ]

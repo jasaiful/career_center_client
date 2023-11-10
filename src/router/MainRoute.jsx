@@ -4,6 +4,9 @@ import Home from "../pages/Home/Home";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Register from "../pages/Register/Register";
 import Login from "../pages/Login/Login";
+import AddJobs from "../pages/Add Jobs/AddJobs";
+import JobDetails from "../pages/JobDetails/JobDetails";
+import MyBids from "../pages/MyBids/MyBids";
 
 
 const MainRoute = createBrowserRouter([
@@ -23,7 +26,22 @@ const MainRoute = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
-            }
+            },
+            {
+                path: '/addJobs',
+                element: <AddJobs></AddJobs>
+            },
+            {
+                path: '/myBids',
+                element: <MyBids></MyBids>
+            },
+            {
+                path: '/jobs/:id',
+                element: <JobDetails></JobDetails>,
+                loader: async ({ params }) => {
+                    return fetch(`http://localhost:5000/jobs/${params.id}`);
+                },
+            },
         ]
     }
 ])

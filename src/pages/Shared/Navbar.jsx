@@ -15,7 +15,7 @@ const Navbar = () => {
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/addJob'>Add Job</Link></li>
+        <li><Link to='/addJobs'>Add Jobs</Link></li>
         <li><Link to='/myPostedJobs'>My Posted Jobs</Link></li>
         <li><Link to='/myBids'>My Bids</Link></li>
         <li><Link to='/bidRequests'>Bid Requests</Link></li>
