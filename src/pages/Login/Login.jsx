@@ -29,7 +29,7 @@ const Login = () => {
                     lastLoggedAt: result.user?.metadata?.lastSignInTime
                 };
 
-                fetch('http://localhost:5000/googleUser', {
+                fetch('https://a11-career-center-server.vercel.app/googleUser', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -69,7 +69,7 @@ const Login = () => {
                     lastLoggedAt: result.user?.metadata?.lastSignInTime
                 }
 
-                fetch('http://localhost:5000/user', {
+                fetch('https://a11-career-center-server.vercel.app/user', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

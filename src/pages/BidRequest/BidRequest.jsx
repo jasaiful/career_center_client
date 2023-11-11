@@ -8,7 +8,7 @@ const BidRequest = () => {
         // Fetch bid requests for the logged-in job owner
         const fetchBidRequests = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/bidRequests`); // Replace with your API endpoint
+                const response = await axios.get(`https://a11-career-center-server.vercel.app/bidRequests`); // Replace with your API endpoint
                 setBidRequests(response.data);
             } catch (error) {
                 console.error('Error fetching bid requests:', error);
@@ -21,7 +21,7 @@ const BidRequest = () => {
     const handleAccept = async (bidRequestId) => {
         try {
             // Update the bid request status to accepted
-            await axios.patch(`http://localhost:5000/bidRequests/${bidRequestId}`, { status: 'accepted' }); // Replace with your API endpoint
+            await axios.patch(`https://a11-career-center-server.vercel.app/bidRequests/${bidRequestId}`, { status: 'accepted' }); // Replace with your API endpoint
             // Update the local state to reflect the change
             setBidRequests((prevBidRequests) =>
                 prevBidRequests.map((bidRequest) =>
@@ -36,7 +36,7 @@ const BidRequest = () => {
     const handleReject = async (bidRequestId) => {
         try {
             // Update the bid request status to rejected
-            await axios.patch(`http://localhost:5000/bidRequests/${bidRequestId}`, { status: 'rejected' }); // Replace with your API endpoint
+            await axios.patch(`https://a11-career-center-server.vercel.app/bidRequests/${bidRequestId}`, { status: 'rejected' }); // Replace with your API endpoint
             // Update the local state to reflect the change
             setBidRequests((prevBidRequests) =>
                 prevBidRequests.map((bidRequest) =>

@@ -15,7 +15,7 @@ const MyPostedJob = () => {
     useEffect(() => {
         const fetchMyJobs = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/jobs', {
+                const response = await axios.get('https://a11-career-center-server.vercel.app/jobs', {
                     params: { email: user?.email }
                 });
                 setMyJobs(response.data);
@@ -54,7 +54,7 @@ const MyPostedJob = () => {
         if (confirmDelete.isConfirmed) {
             try {
                 // Delete the job from the database
-                await axios.delete(`http://localhost:5000/jobs/${jobId}`);
+                await axios.delete(`https://a11-career-center-server.vercel.app/jobs/${jobId}`);
 
                 // Remove the deleted job from the local state
                 setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));

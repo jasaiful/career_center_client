@@ -11,7 +11,7 @@ const UpdateJobModal = ({ jobId, onClose, onUpdate }) => {
     useEffect(() => {
         const fetchJobData = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/jobs/${jobId}`);
+                const response = await axios.get(`https://a11-career-center-server.vercel.app/jobs/${jobId}`);
                 setUpdatedData(response.data);
             } catch (error) {
                 console.error('Error fetching job data:', error);
@@ -38,7 +38,7 @@ const UpdateJobModal = ({ jobId, onClose, onUpdate }) => {
         // const buyerEmail = form.buyerEmail.value
         try {
 
-            await axios.patch(`http://localhost:5000/jobs/${jobId}`, updatedData);
+            await axios.patch(`https://a11-career-center-server.vercel.app/jobs/${jobId}`, updatedData);
             toast.success('Job updated successfully!');
             onUpdate();
             onClose();

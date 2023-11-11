@@ -34,7 +34,7 @@ const Register = () => {
                             userCreated: result.user?.metadata?.creationTime
                         };
                         
-                        fetch('http://localhost:5000/user', {
+                        fetch('https://a11-career-center-server.vercel.app/user', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
