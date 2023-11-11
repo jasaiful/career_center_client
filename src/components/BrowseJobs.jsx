@@ -4,7 +4,6 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import JobList from "./JobList";
 
 
-
 const BrowseJobs = () => {
 
     const [category, setCategory] = useState("Web Development");

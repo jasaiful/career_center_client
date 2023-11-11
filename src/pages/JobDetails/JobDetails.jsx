@@ -12,24 +12,6 @@ const JobDetails = () => {
     const { jobTitle, email, bidPrice, deadline } = data;
 
 
-    // const handleAddJob = async (event) => {
-    //     try {
-    //         event.preventDefault();
-    //         await axios.post('http://localhost:5000/jobs', job);
-    //         Swal.fire({
-    //             title: 'Success',
-    //             text: 'Job added successfully!',
-    //             icon: 'success',
-    //             confirmButtonText: 'Done'
-    //         })
-    //         navigate('/');
-    //         // history.push('/my-posted-jobs');
-    //     } catch (error) {
-    //         toast.error('An error occurred');
-    //     }
-    // };
-
-
     const handleBidProject = async (e) => {
         try {
             e.preventDefault();
@@ -49,137 +31,133 @@ const JobDetails = () => {
                 return;
             }
 
-           await axios.post('http://localhost:5000/myBids', myBids);
+            await axios.post('http://localhost:5000/myBids', myBids);
 
-            if (data.insertedId) {
-                Swal.fire({
-                    title: 'Success',
-                    text: 'Congratulations, you successfully bid on this project!',
-                    icon: 'success',
-                    confirmButtonText: 'Done'
-                });
-                navigate('/myBids');
+            Swal.fire({
+                title: 'Success',
+                text: 'Congratulations, you successfully bid on this project!',
+                icon: 'success',
+                confirmButtonText: 'Done'
+            });
+            navigate('/myBids');
 
-            } else {
-                toast.error('An error occurred');
-            }
-        } catch (error) {
-            console.error("Error submitting bid.", error);
-            toast.error('An error occurred');
-        }
-    };
+    } catch (error) {
+        console.error("Error submitting bid.", error);
+        toast.error('An error occurred');
+    }
+};
 
 
-    return (
-        <div className="my-5 bg-base-200 rounded-xl max-w-5xl mx-auto">
-            <div className="text-center py-3 px-auto">
-                <h1 className="text-4xl mb-6 font-bold">Job Details</h1>
-                <div className="space-y-2">
-                    <h3 className='text-3xl text-red-600 font-semibold '>{data?.jobTitle}</h3>
-                    <p>Deadline: <span className="text-red-600 font-semibold">{data?.deadline}</span> </p>
-                    <p>Price Range: <span className="font-semibold">${data?.minPrice} - ${data?.maxPrice}</span></p>
-                    <p>{data?.description}</p>
-                </div>
-
+return (
+    <div className="my-5 bg-base-200 rounded-xl max-w-5xl mx-auto">
+        <div className="text-center py-3 px-auto">
+            <h1 className="text-4xl mb-6 font-bold">Job Details</h1>
+            <div className="space-y-2">
+                <h3 className='text-3xl text-red-600 font-semibold '>{data?.jobTitle}</h3>
+                <p>Deadline: <span className="text-red-600 font-semibold">{data?.deadline}</span> </p>
+                <p>Price Range: <span className="font-semibold">${data?.minPrice} - ${data?.maxPrice}</span></p>
+                <p>{data?.description}</p>
             </div>
-            <div className="hero-content flex-col">
-                <div className="card flex-shrink-0 py-3 w-full shadow-2xl bg-base-100">
-                    <h1 className="text-2xl text-center font-bold">Bid on the project</h1>
-                    <form onSubmit={handleBidProject} className="px-10">
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Job Title</span>
-                            </label>
-                            <input
-                                type="text"
-                                name="jobTitle"
-                                defaultValue={jobTitle}
-                                readOnly
-                                disabled={true}
-                                // placeholder="Job Title"
-                                className="input input-bordered"
-                                required />
-                        </div>
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Bid Price</span>
-                            </label>
-                            <input
-                                type="number"
-                                name="bidPrice"
-                                value={bidPrice}
-                                placeholder="Price"
-                                className="input input-bordered"
-                                required />
-                        </div>
+        </div>
+        <div className="hero-content flex-col">
+            <div className="card flex-shrink-0 py-3 w-full shadow-2xl bg-base-100">
+                <h1 className="text-2xl text-center font-bold">Bid on the project</h1>
+                <form onSubmit={handleBidProject} className="px-10">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Job Title</span>
+                        </label>
+                        <input
+                            type="text"
+                            name="jobTitle"
+                            defaultValue={jobTitle}
+                            readOnly
+                            disabled={true}
+                            // placeholder="Job Title"
+                            className="input input-bordered"
+                            required />
+                    </div>
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Bid Date</span>
-                            </label>
-                            <input
-                                type="date"
-                                name="bidDate"
-                                defaultValue={Date}
-                                // placeholder="Job Title"
-                                className="input input-bordered"
-                                required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Deadline</span>
-                            </label>
-                            <input
-                                type="date"
-                                name="deadline"
-                                readOnly
-                                disabled={true}
-                                defaultValue={deadline}
-                                // placeholder="Job Title"
-                                className="input input-bordered"
-                                required />
-                        </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Bid Price</span>
+                        </label>
+                        <input
+                            type="number"
+                            name="bidPrice"
+                            value={bidPrice}
+                            placeholder="Price"
+                            className="input input-bordered"
+                            required />
+                    </div>
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                defaultValue={user?.email}
-                                readOnly
-                                disabled={true}
-                                placeholder="Email"
-                                className="input input-bordered"
-                                required />
-                        </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Bid Date</span>
+                        </label>
+                        <input
+                            type="date"
+                            name="bidDate"
+                            defaultValue={ new Date().toISOString().split('T')[0]}
+                            // placeholder="Job Title"
+                            className="input input-bordered"
+                            required />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Deadline</span>
+                        </label>
+                        <input
+                            type="date"
+                            name="deadline"
+                            readOnly
+                            disabled={true}
+                            defaultValue={deadline}
+                            // placeholder="Job Title"
+                            className="input input-bordered"
+                            required />
+                    </div>
 
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Buyer Email</span>
-                            </label>
-                            <input
-                                type="email"
-                                name="buyerEmail"
-                                defaultValue={email}
-                                readOnly
-                                disabled={true}
-                                placeholder="Email"
-                                className="input input-bordered"
-                                required />
-                        </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Email</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            defaultValue={user?.email}
+                            readOnly
+                            disabled={true}
+                            placeholder="Email"
+                            className="input input-bordered"
+                            required />
+                    </div>
 
-                        <div className="form-control mt-6">
-                            <button type="submit" className="btn text-white bg-red-600">Bid on the project</button>
-                        </div>
-                    </form>
-                </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text">Buyer Email</span>
+                        </label>
+                        <input
+                            type="email"
+                            name="buyerEmail"
+                            defaultValue={email}
+                            readOnly
+                            disabled={true}
+                            placeholder="Email"
+                            className="input input-bordered"
+                            required />
+                    </div>
+
+                    <div className="form-control mt-6">
+                        <button type="submit" className="btn text-white bg-red-600">Bid on the project</button>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
-    );
+);
 };
 
 export default JobDetails;

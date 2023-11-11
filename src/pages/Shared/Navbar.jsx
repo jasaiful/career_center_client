@@ -5,18 +5,18 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
 
-    const {user, userLogOut} = useContext(AuthContext);
+    const { user, userLogOut } = useContext(AuthContext);
 
     const handleUserSignOut = () => {
         userLogOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
     const navItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/addJobs'>Add Jobs</Link></li>
-        <li><Link to='/postedJobs'>My Posted Jobs</Link></li>
+        <li><Link to='/postedJob'>My Posted Jobs</Link></li>
         <li><Link to='/myBids'>My Bids</Link></li>
         <li><Link to='/bidRequest'>Bid Requests</Link></li>
         <li><Link to='/register'>Register</Link></li>
