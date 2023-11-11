@@ -8,7 +8,7 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(null);
+    const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider;
 
     // create new user
@@ -42,6 +42,7 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false);
         });
+
         return () => {
             unSubscribe();
         }
@@ -58,7 +59,10 @@ const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={authInfo}>
-            {children}
+            {
+                loading ? 
+                <progress className="progress w-56"></progress> : (children)
+            }
         </AuthContext.Provider>
     );
 };
