@@ -20,11 +20,13 @@ const AddJobs = () => {
         category: 'Web Development',
         minPrice: '',
         maxPrice: '',
+        email: '',
     });
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setJob({ ...job, [name]: value });
+        const updatedValue = name === 'email' ? user?.email : value;
+        setJob({ ...job, [name]: updatedValue });
     };
 
     const handleAddJob = async (event) => {
@@ -37,13 +39,12 @@ const AddJobs = () => {
                 icon: 'success',
                 confirmButtonText: 'Done'
             })
-            navigate('/');
+            navigate('/postedJob');
             // history.push('/my-posted-jobs');
         } catch (error) {
             toast.error('An error occurred');
         }
     };
-
 
     return (
         <div className="hero my-5 bg-base-200 rounded-xl max-w-5xl mx-auto">
@@ -60,9 +61,7 @@ const AddJobs = () => {
                             <input
                                 type="email"
                                 name="email"
-                                value={user?.email}
-                                readOnly
-                                disabled={true}
+                                value={job.email || user?.email}
                                 onChange={handleInputChange}
                                 placeholder="Email"
                                 className="input input-bordered"

@@ -1,51 +1,70 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
-
 const JobDetails = () => {
     const data = useLoaderData();
-    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { jobTitle, email, bidPrice, deadline } = data;
 
-    const [jobTitle, setJobTitle] = useState('');
-    const [email, setEmail] = useState('');
-    const [bidPrice, setBidPrice] = useState('');
-    const [deadline, setDeadline] = useState('');
-    const [buyerEmail, setBuyerEmail] = useState('');
 
-    // const [bids, setBids] = useState({
-    //     jobTitle: '',
-    //     email: '',
-    //     bidPrice: '',
-    //     deadline: '',
-    //     buyerEmail: '',
-    // });
+    // const handleAddJob = async (event) => {
+    //     try {
+    //         event.preventDefault();
+    //         await axios.post('http://localhost:5000/jobs', job);
+    //         Swal.fire({
+    //             title: 'Success',
+    //             text: 'Job added successfully!',
+    //             icon: 'success',
+    //             confirmButtonText: 'Done'
+    //         })
+    //         navigate('/');
+    //         // history.push('/my-posted-jobs');
+    //     } catch (error) {
+    //         toast.error('An error occurred');
+    //     }
+    // };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setBids({ ...bids, [name]: value });
-    };
 
-    const handleBidProject = async (event) => {
+    const handleBidProject = async (e) => {
         try {
-            event.preventDefault();
+            e.preventDefault();
+            const form = e.target;
+            const jobTitle = form.jobTitle.value
+            const bidPrice = form.bidPrice.value
+            const bidDate = form.bidDate.value
+            const deadline = form.deadline.value
+            const email = user?.email
+            const buyerEmail = form.buyerEmail.value
 
-            const myBids = {jobTitle, email, bidPrice, deadline, buyerEmail};
+            const myBids = { jobTitle, bidPrice, bidDate, deadline, email, buyerEmail };
             console.log(myBids);
 
-            await axios.post('http://localhost:5000/myBids');
-            Swal.fire({
-                title: 'Success',
-                text: 'Congratulations, you successfully bid on this project!',
-                icon: 'success',
-                confirmButtonText: 'Done'
-            })
-            navigate('/myBids');
+            if (user?.email === data?.email) {
+                toast.error("You can not bid on your own job.");
+                return;
+            }
+
+           await axios.post('http://localhost:5000/myBids', myBids);
+
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Congratulations, you successfully bid on this project!',
+                    icon: 'success',
+                    confirmButtonText: 'Done'
+                });
+                navigate('/myBids');
+
+            } else {
+                toast.error('An error occurred');
+            }
         } catch (error) {
+            console.error("Error submitting bid.", error);
             toast.error('An error occurred');
         }
     };
@@ -74,28 +93,39 @@ const JobDetails = () => {
                             <input
                                 type="text"
                                 name="jobTitle"
-                                value={data?.jobTitle}
+                                defaultValue={jobTitle}
                                 readOnly
                                 disabled={true}
-                                onChange={handleInputChange}
-                                placeholder="Job Title"
+                                // placeholder="Job Title"
                                 className="input input-bordered"
                                 required />
                         </div>
 
-                        {/* <div className="form-control">
+                        <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Price</span>
+                                <span className="label-text">Bid Price</span>
                             </label>
                             <input
                                 type="number"
                                 name="bidPrice"
                                 value={bidPrice}
-                                onChange={handleInputChange}
                                 placeholder="Price"
                                 className="input input-bordered"
                                 required />
-                        </div> */}
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Bid Date</span>
+                            </label>
+                            <input
+                                type="date"
+                                name="bidDate"
+                                defaultValue={Date}
+                                // placeholder="Job Title"
+                                className="input input-bordered"
+                                required />
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Deadline</span>
@@ -103,8 +133,9 @@ const JobDetails = () => {
                             <input
                                 type="date"
                                 name="deadline"
-                                value={data?.deadline}
-                                onChange={handleInputChange}
+                                readOnly
+                                disabled={true}
+                                defaultValue={deadline}
                                 // placeholder="Job Title"
                                 className="input input-bordered"
                                 required />
@@ -117,10 +148,9 @@ const JobDetails = () => {
                             <input
                                 type="email"
                                 name="email"
-                                value={user?.email}
+                                defaultValue={user?.email}
                                 readOnly
                                 disabled={true}
-                                onChange={handleInputChange}
                                 placeholder="Email"
                                 className="input input-bordered"
                                 required />
@@ -128,15 +158,14 @@ const JobDetails = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text"> Buyer Email</span>
+                                <span className="label-text">Buyer Email</span>
                             </label>
                             <input
                                 type="email"
                                 name="buyerEmail"
-                                value={data?.email}
+                                defaultValue={email}
                                 readOnly
                                 disabled={true}
-                                onChange={handleInputChange}
                                 placeholder="Email"
                                 className="input input-bordered"
                                 required />
