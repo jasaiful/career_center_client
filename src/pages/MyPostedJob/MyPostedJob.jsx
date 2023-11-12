@@ -34,51 +34,52 @@ const MyPostedJob = () => {
 
     const handleDeleteJob = async (jobId) => {
         const isUserJob = myJobs.some((job) => job._id === jobId && job.email === user?.email);
-
-        if (!isUserJob) {
-            toast.error("You can only delete your own job posts.");
-            return;
-        }
-
-        // Confirm deletion with a sweet alert
-        const confirmDelete = await Swal.fire({
-            title: 'Are you sure?',
-            text: 'You won\'t be able to revert this!',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#d33',
-            cancelButtonColor: '#3085d6',
-            confirmButtonText: 'Yes, delete it!'
-        });
-
-        if (confirmDelete.isConfirmed) {
-            try {
-                // Delete the job from the database
-                await axios.delete(`http://localhost:5000/jobs/${jobId}`);
-
-                // Remove the deleted job from the local state
-                setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
-
-                // Show success message
-                Swal.fire({
-                    title: 'Deleted!',
-                    text: 'Your job has been deleted.',
-                    icon: 'success',
-                    confirmButtonText: 'Ok'
-                });
-            } catch (error) {
-                console.error('Error deleting job:', error);
-                Swal.fire({
-                    title: 'Error',
-                    text: 'An error occurred while deleting the job.',
-                    icon: 'error',
-                    confirmButtonText: 'Ok'
-                });
+    
+        if (isUserJob) {
+            const confirmDelete = await Swal.fire({
+                title: 'Are you sure?',
+                text: 'You won\'t be able to revert this!',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            });
+    
+            if (confirmDelete.isConfirmed) {
+                try {
+                    // Use axios.delete with the full URL
+                    await axios.delete(`http://localhost:5000/jobs/${jobId}`);
+    
+                    // Remove the deleted job from the local state
+                    setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));
+    
+                    Swal.fire({
+                        title: 'Deleted!',
+                        text: 'Your job has been deleted.',
+                        icon: 'success',
+                        confirmButtonText: 'Ok'
+                    });
+                } catch (error) {
+                    console.error('Error deleting job:', error);
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'An error occurred while deleting the job.',
+                        icon: 'error',
+                        confirmButtonText: 'Ok'
+                    });
+                }
             }
+        } else {
+            Swal.fire({
+                title: 'Error',
+                text: 'You can delete only your own jobs',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
         }
     };
-
-
+   
     return (
         <div className="px-10 py-6 rounded bg-base-200">
             <h2 className="text-4xl mb-6 text-center font-bold">My Posted Jobs</h2>
