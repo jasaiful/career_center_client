@@ -51,14 +51,14 @@ const MainRoute = createBrowserRouter([
                 path: '/jobs/:id',
                 element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
                 loader: async ({ params }) => {
-                    return fetch(`https://a11-career-center-server.vercel.app/jobs/${params.id}`);
+                    return fetch(`http://localhost:5000/jobs/${params.id}`);
                 },
             },
             {
                 path: '/updateJob/:jobId',
                 element: <PrivateRoute> <UpdateJobModal></UpdateJobModal> </PrivateRoute>,
                 loader: async ({ params }) => {
-                    return fetch(`https://a11-career-center-server.vercel.app/jobs/${params.jobId}`);
+                    return fetch(`http://localhost:5000/jobs/${params.jobId}`);
                 },
             },
         ]

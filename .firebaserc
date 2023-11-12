@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "career-center-2607f"
-  }
+    "default": "career-center-2607f",
+    "prod": "career-center-2607f"
+  },
+  "targets": {},
+  "etags": {}
 }

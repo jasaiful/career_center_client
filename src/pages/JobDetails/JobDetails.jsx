@@ -31,7 +31,7 @@ const JobDetails = () => {
                 return;
             }
 
-            await axios.post('https://a11-career-center-server.vercel.app/myBids', myBids);
+            await axios.post('http://localhost:5000/myBids', myBids);
 
             Swal.fire({
                 title: 'Success',

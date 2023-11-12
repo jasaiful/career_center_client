@@ -32,7 +32,7 @@ const AddJobs = () => {
     const handleAddJob = async (event) => {
         try {
             event.preventDefault();
-            await axios.post('https://a11-career-center-server.vercel.app/jobs', job);
+            await axios.post('http://localhost:5000/jobs', job);
             Swal.fire({
                 title: 'Success',
                 text: 'Job added successfully!',

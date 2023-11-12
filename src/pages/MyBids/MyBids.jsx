@@ -8,7 +8,7 @@ const MyBids = () => {
         // Fetch bids for the logged-in user
         const fetchBids = async () => {
             try {
-                const response = await axios.get(`https://a11-career-center-server.vercel.app/myBids`); // Replace with your API endpoint
+                const response = await axios.get(`http://localhost:5000/myBids`); // Replace with your API endpoint
                 setBids(response.data);
             } catch (error) {
                 console.error('Error fetching bids:', error);
@@ -21,7 +21,7 @@ const MyBids = () => {
     const handleComplete = async (bidId) => {
         try {
             // Update the bid status to complete
-            await axios.patch(`https://a11-career-center-server.vercel.app/myBids/${bidId}`, { status: 'complete' }); // Replace with your API endpoint
+            await axios.patch(`http://localhost:5000/myBids/${bidId}`, { status: 'complete' }); // Replace with your API endpoint
             // Update the local state to reflect the change
             setBids((prevBids) =>
                 prevBids.map((bid) =>

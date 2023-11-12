@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [error, setError] = useState('');
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
@@ -34,7 +35,7 @@ const Register = () => {
                             userCreated: result.user?.metadata?.creationTime
                         };
                         
-                        fetch('https://a11-career-center-server.vercel.app/user', {
+                        fetch('http://localhost:5000/user', {
                             method: 'POST',
                             headers: {
                                 'content-type': 'application/json'
@@ -50,6 +51,7 @@ const Register = () => {
                                         icon: 'success',
                                         confirmButtonText: 'Done'
                                     })
+                                    navigate('/');
                                     // clear the form fields when registration is successful
                                     setName('');
                                     setPhoto('');

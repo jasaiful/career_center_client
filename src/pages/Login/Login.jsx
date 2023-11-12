@@ -29,7 +29,7 @@ const Login = () => {
                     lastLoggedAt: result.user?.metadata?.lastSignInTime
                 };
 
-                fetch('https://a11-career-center-server.vercel.app/googleUser', {
+                fetch('http://localhost:5000/googleUser', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -45,14 +45,16 @@ const Login = () => {
                                 icon: 'success',
                                 confirmButtonText: 'Done'
                             })
-
                         }
                     })
+                    .catch(error => {
+                        setError(error.message);
+                    });
             })
             .catch(error => {
-                console.error(error)
-            })
-    }
+                setError(error.message)
+            });
+    };
 
     const handleLoginUser = e => {
         e.preventDefault();
@@ -63,13 +65,12 @@ const Login = () => {
                 setError("")
                 navigate(location?.state ? location.state : "/")
 
-                // database
                 const user = {
                     email,
                     lastLoggedAt: result.user?.metadata?.lastSignInTime
                 }
 
-                fetch('https://a11-career-center-server.vercel.app/user', {
+                fetch('http://localhost:5000/user', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'
@@ -78,6 +79,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
+                        console.log("Data from server:", data);
                         if (data.acknowledged === true) {
                             Swal.fire({
                                 title: 'Success',
@@ -85,11 +87,9 @@ const Login = () => {
                                 icon: 'success',
                                 confirmButtonText: 'Done'
                             })
-                            // clear input fields
                             setEmail('');
                             setPassword('');
-                        }
-                        else {
+                        } else {
                             setError("Email or password doesn't match.")
                         }
                     })
@@ -100,10 +100,10 @@ const Login = () => {
 
             })
             .catch(error => {
-                console.error(error)
+                console.error("Authentication error:", error)
                 setError("Email or password doesn't match.")
             });
-    }
+    };
 
 
     return (

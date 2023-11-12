@@ -8,7 +8,7 @@ const JobCard = ({ job }) => {
             <p>Deadline: {job.deadline}</p>
             <p>Price Range: ${job.minPrice} - ${job.maxPrice}</p>
             <p className="text-left">{job.description}</p>
-            <Link to={`/jobs/${job._id}`} className="block text-center btn text-white bg-red-600 mt-2 font-bold p-4 rounded-xl">
+            <Link to={`/jobs/${job._id}`} className="block text-center btn text-white bg-green-700 hover:bg-red-600 mt-2 font-bold p-4 rounded-xl">
                 Bid Now
             </Link>
         </div>
