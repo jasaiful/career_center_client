@@ -15,7 +15,7 @@ This project is created by the following features:
 - Functional
 
 ## 🔗 Live Links
-https://career-center-2607f.firebaseapp.com/?_gl=1*v3i23*_ga*Nzg1NzkzNjUzLjE2OTg0Njc2Njg.*_ga_CW55HF8NVT*MTY5OTM4NDA0OS4zMS4xLjE2OTkzODQwNzcuMzIuMC4w
+https://neon-baklava-ee1d7f.netlify.app/
 
 ## Authors
 Julfiker Ali

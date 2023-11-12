@@ -27,11 +27,7 @@ const MyPostedJob = () => {
         fetchMyJobs();
     }, [user]);
 
-    // const handleUpdateJob = async (jobId) => {
-    //     // Navigate to the update job page/modal
-    //     navigate(`/updateJob/${jobId}`);
-    // };
-
+    
     const handleDeleteJob = async (jobId) => {
         const isUserJob = myJobs.some((job) => job._id === jobId && job.email === user?.email);
     
