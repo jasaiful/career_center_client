@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
-
+import axios from "axios";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -13,64 +13,63 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleCreateUser = e => {
+    const handleCreateUser = async (e) => {
         e.preventDefault();
         console.log(name, photo, email, password);
 
-        if (!/^(?=.*[A-Z])(?=.*\W)(?!.* ).{6,}$/.test(password)) {
-            setError("Minium 6 characters, at least one uppercase & at least one special character");
-        }
-        else {
-            setError('');
+        try {
+            if (!/^(?=.*[A-Z])(?=.*\W)(?!.* ).{6,}$/.test(password)) {
+                setError("Minimum 6 characters, at least one uppercase & at least one special character");
+            } else {
+                setError('');
 
-            if (email && password) {
-                createUser(email, password)
-                    .then(result => {
-                        console.log(result.user);
+                if (email && password) {
+                    const result = await createUser(email, password);
+                    console.log(result.user);
 
-                        const user = { 
-                            email, 
-                            name: result.user?.displayName,
-                            photo: result.user?.photoURL, 
-                            userCreated: result.user?.metadata?.creationTime
-                        };
-                        
-                        fetch('http://localhost:5000/user', {
-                            method: 'POST',
-                            headers: {
-                                'content-type': 'application/json'
-                            },
-                            body: JSON.stringify(user)
-                        })
-                            .then(res => res.json())
-                            .then(data => {
-                                if (data.insertedId) {
-                                    Swal.fire({
-                                        title: 'Success',
-                                        text: 'You successfully registered',
-                                        icon: 'success',
-                                        confirmButtonText: 'Done'
-                                    })
-                                    navigate('/');
-                                    // clear the form fields when registration is successful
-                                    setName('');
-                                    setPhoto('');
-                                    setEmail('');
-                                    setPassword('');
-                                }
-                            })
-                            .catch(error => {
-                                setError(error.message);
-                            });
-                        setError('');
-                    })
+                    const user = {
+                        email,
+                        name,
+                        photo,
+                        userCreated: result.user?.metadata?.creationTime,
+                    };
 
-                    .catch((error) => {
-                        setError(error.message)
-                    });
+                    const res = await axios.post('http://localhost:5000/user', user);
+
+                    const data = res.data;
+
+                    if (data.acknowledged === true) {
+
+                        Swal.fire({
+                            title: 'Success',
+                            text: 'You successfully registered',
+                            icon: 'success',
+                            confirmButtonText: 'Done',
+                        });
+
+                        navigate('/');
+                        setName('');
+                        setPhoto('');
+                        setEmail('');
+                        setPassword('');
+                    } else {
+                        setError("Registration failed. Please try again.");
+                    }
+                    if (data.insertedId && result.user && result.user.currentUser) {
+                        await result.user.currentUser.updateProfile({
+                            displayName: name,
+                            photoURL: photo,
+                        });
+
+                    }
+                }
             }
+        } catch (error) {
+            console.error("Error:", error);
+            setError(error.message);
         }
     };
+
 
     return (
         <div className="text-center md:min-h-screen">
