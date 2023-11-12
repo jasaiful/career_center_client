@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { toast } from "react-toastify";
+
 
 const MyPostedJob = () => {
     const [showUpdateModal, setShowUpdateModal] = useState(false);
@@ -15,7 +15,7 @@ const MyPostedJob = () => {
     useEffect(() => {
         const fetchMyJobs = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/jobs', {
+                const response = await axios.get('https://a11-career-center-server.vercel.app/jobs', {
                     params: { email: user?.email }
                 });
                 setMyJobs(response.data);
@@ -49,7 +49,7 @@ const MyPostedJob = () => {
             if (confirmDelete.isConfirmed) {
                 try {
                     // Use axios.delete with the full URL
-                    await axios.delete(`http://localhost:5000/jobs/${jobId}`);
+                    await axios.delete(`https://a11-career-center-server.vercel.app/jobs/${jobId}`);
     
                     // Remove the deleted job from the local state
                     setMyJobs((prevJobs) => prevJobs.filter((job) => job._id !== jobId));

@@ -29,7 +29,7 @@ const BrowseJobs = () => {
     const [jobs, setJobs] = useState([]);
     useEffect(() => {
         const encodedCategory = encodeURIComponent(category);
-        const apiUrl = `http://localhost:5000/category/${encodedCategory}`;
+        const apiUrl = `https://a11-career-center-server.vercel.app/category/${encodedCategory}`;
         console.log(apiUrl);
         fetch(apiUrl)
             .then(res => res.json())

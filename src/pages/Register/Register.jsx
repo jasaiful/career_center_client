@@ -34,7 +34,7 @@ const Register = () => {
                         userCreated: result.user?.metadata?.creationTime,
                     };
 
-                    const res = await axios.post('http://localhost:5000/user', user);
+                    const res = await axios.post('https://a11-career-center-server.vercel.app/user', user);
 
                     const data = res.data;
 
