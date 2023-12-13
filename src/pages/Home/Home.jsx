@@ -12,6 +12,7 @@ const Home = () => {
             {/* <JobList></JobList> */}
             <Events></Events>
             <UserGuideline></UserGuideline>
+            
         </div>
     );
 };
