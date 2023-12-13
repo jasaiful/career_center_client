@@ -18,7 +18,7 @@ const Testimonials = () => {
 
     return (
         <div className="p-8">
-            <h2 className="text-red-600 pt-2 text-center mx-auto font-bold text-4xl">Testimonials</h2>
+            <h2 className="text-pink-600 pt-2 text-center mx-auto font-bold text-4xl">Testimonials</h2>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -37,7 +37,7 @@ const Testimonials = () => {
                     reviews.map(review => <SwiperSlide key={review._id} >
                         <div className="my-5 mx-16 flex flex-col items-center">
                             <img className="rounded-full md:w-1/6" src={review.avatar} alt="avatar" />
-                            <h3 className="text-2xl text-red-600">{review.name}</h3>
+                            <h3 className="text-2xl text-pink-600">{review.name}</h3>
                             <p className="py-8">{review.details}</p>
                             <Rating
                                 style={{ maxWidth: 180 }}
