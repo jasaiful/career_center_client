@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "jobTitle": "Software Engineer",
+      "company": "Tech Solutions Inc.",
+      "companyLogo": "https://i.ibb.co/c8Gmfs2/image.png"
+    },
+    {
+      "id": 2,
+      "jobTitle": "Marketing Manager",
+      "company": "Marketing Innovations Co.",
+      "companyLogo": "https://i.ibb.co/xqq3GnT/image.png"
+    },
+    {
+      "id": 3,
+      "jobTitle": "Data Analyst",
+      "company": "Data Dynamics Ltd.",
+      "companyLogo": "https://i.ibb.co/vZzBcfy/image.png"
+    },
+    {
+      "id": 4,
+      "jobTitle": "Graphic Designer",
+      "company": "Creative Design Studios",
+      "companyLogo": "https://i.ibb.co/99F5p6k/image.png"
+    },
+    {
+      "id": 5,
+      "jobTitle": "Financial Analyst",
+      "company": "Finance Experts LLC",
+      "companyLogo": "https://i.ibb.co/9hgNtgN/image.png"
+    },
+    {
+      "id": 6,
+      "jobTitle": "HR Specialist",
+      "company": "Human Resource Solutions",
+      "companyLogo": "https://i.ibb.co/q1GqF7B/image.png"
+    },
+    {
+      "id": 8,
+      "jobTitle": "Product Manager",
+      "company": "Product Innovations Corp.",
+      "companyLogo": "https://i.ibb.co/Y8K4FHY/image.png"
+    },
+    {
+      "id": 9,
+      "jobTitle": "Customer Support Specialist",
+      "company": "Support Pro Solutions",
+      "companyLogo": "https://i.ibb.co/K65mcPN/image.png"
+    },
+    {
+      "id": 10,
+      "jobTitle": "Operations Manager",
+      "company": "Operational Excellence Inc.",
+      "companyLogo": "https://i.ibb.co/WFNWBVy/image.png"
+    }
+  ]
+  
