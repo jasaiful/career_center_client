@@ -13,9 +13,9 @@ const HotJobs = () => {
         <div className="p-8">
             <h2 className="text-pink-600 pt-2 text-center mx-auto font-bold text-4xl pb-5">Hot Jobs</h2>
 
-            <div className="grid grid-cols-3 gap-5">
+            <div className="grid grid-cols-4 gap-5">
                 {
-                    hotJobs.map(hotJob => <div key={hotJob.id} className="card card-compact w-96 bg-base-100 shadow-xl">
+                    hotJobs.map(hotJob => <div key={hotJob.id} className="card card-compact w-full bg-base-100 shadow-xl">
                     <figure><img src={hotJob.companyLogo} alt="logo" /></figure>
                     <div className="card-body">
                       <h2 className="card-title">{hotJob.jobTitle}</h2>
